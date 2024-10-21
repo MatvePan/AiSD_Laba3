@@ -1,5 +1,6 @@
 ﻿  AiSD_Laba3.cpp
-C:\Users\Matvey\Desktop\АиСД\AiSD_Laba3\AiSD_Laba3.cpp(79,13): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
-C:\Users\Matvey\Desktop\АиСД\AiSD_Laba3\AiSD_Laba3.cpp(141,22): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
-C:\Users\Matvey\Desktop\АиСД\AiSD_Laba3\AiSD_Laba3.cpp(172,11): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
-  AiSD_Laba3.vcxproj -> C:\Users\Matvey\Desktop\АиСД\AiSD_Laba3\x64\Debug\AiSD_Laba3.exe
+C:\Users\matve\Desktop\AiSD_Laba3-main\AiSD_Laba3.cpp(79,13): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\matve\Desktop\AiSD_Laba3-main\AiSD_Laba3.cpp(114,13): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\matve\Desktop\AiSD_Laba3-main\AiSD_Laba3.cpp(173,23): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\matve\Desktop\AiSD_Laba3-main\AiSD_Laba3.cpp(198,11): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+  AiSD_Laba3.vcxproj -> C:\Users\matve\Desktop\AiSD_Laba3-main\x64\Debug\AiSD_Laba3.exe

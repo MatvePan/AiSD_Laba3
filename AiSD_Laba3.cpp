@@ -110,7 +110,21 @@ void Fast(vector<Tovar>& place, int start, int end) { // Функция быст
 	}
 }
 
+void ShellNonAnt(vector<Tovar>& place) { // Функция сортировки Шелла
+	for (int i = place.size() / 2; i > 0; i /= 2) {
+		for (int j = i; j < place.size(); j++) {
+			int temp = place[j].code;
+			int k;
+			for (k = j; k >= i and place[k - i].code > temp; k -= i) {
+				place[k].code = place[k - i].code;
+			}
+			place[k].code = temp;
+		}
+	}
+}
+
 void StraightSearch(vector<Tovar>& place) { // Функция прямого поиска
+	ShellNonAnt(place);
 	cout << "Для выхода введите 0\n";
 	while (true) {
 		int code;
@@ -137,27 +151,39 @@ void StraightSearch(vector<Tovar>& place) { // Функция прямого п�
 	}
 }
 
-void BinSearch(vector<Tovar>& place) { // Функция бинарного поиска
-	int left = 0, right = place.size(), middle;
+int BinSAlg(vector<Tovar>& place, int code, int left, int right) { // Функция сдвига границ и выявление искомого числа для бинарного поиска
+	int middle=0;
 	while (true) {
-		int code;
-		cout << "Введите код\n";
-		cin >> code;
-		if (code == 0)
-			break;
 		middle = (left + right) / 2;
 		if (code < place[middle].code)
 			right = middle - 1;
 		else if (code > place[middle].code)
 			left = middle + 1;
-		else {
+		else
+			return middle;
+		if (left > right)
+			return -1;
+	}
+}
+
+void BinSearch(vector<Tovar>& place) { // Функция бинарного поиска
+	ShellNonAnt(place);
+	while (true) {
+		int code;
+		int left = 0, right = place.size()-1;
+		cout << "Введите код\n";
+		cin >> code;
+		if (code == 0)
+			break;
+		int index=BinSAlg(place, code, left, right);
+		if (index>=0) {
 			cout << "Код найден\n";
-			cout << "Код: " << place[middle].code << "\n";
-			cout << "Название: " << place[middle].name << "\n";
-			cout << "Цена: " << place[middle].price << "\n";
+			cout << "Код: " << place[index].code << "\n";
+			cout << "Название: " << place[index].name << "\n";
+			cout << "Цена: " << place[index].price << "\n";
 			cout << "\n";
 		}
-		if (left > right) {
+		else {
 			cout << "Код не найден\n";
 			cout << "\n";
 		}
